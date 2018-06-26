@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="OsProjekt.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OsProjekt"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Name="FileSelectionButton" Content="Odabir datoteke" 
+                HorizontalAlignment="Left" Margin="64,78,0,0" VerticalAlignment="Top" Click="FileSelectionButton_Click"/>
+        <TextBox Name ="EncryptionTextBox" HorizontalAlignment="Left" Margin="64,131,0,0" 
+                 Text="Tekst za enkripciju" VerticalAlignment="Top" Height="54" Width="199" TextChanged="EncryptionTextBox_TextChanged"/>
+
+        <ToggleSwitch Name="EncryptionType" Header="Način kriptiranja" HorizontalAlignment="Left" Margin="64,223,0,0" VerticalAlignment="Top"
+                      OffContent="Simetrično (AES)" OnContent="Asimetrično (RSA)" Toggled="EncryptionType_Toggled"/>
+        <Button Name="EncryptButton"  Content="Enkrpicija" HorizontalAlignment="Left" Margin="64,317,0,0" 
+                VerticalAlignment="Top" Click="EncryptButton_Click"/>
+        <Button  Name="DecryptButton" Content="Dekripcija" HorizontalAlignment="Left" Margin="177,317,0,0" VerticalAlignment="Top" Click="DecryptButton_Click" />
+
+        <TextBlock Name="ResultTextBlock" HorizontalAlignment="Left" Margin="363,223,0,0" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" Height="245" Width="350"/>
+        <Button Name="MessageDigestButton" Content="Sažetak" HorizontalAlignment="Left" Margin="64,379,0,0" VerticalAlignment="Top" Click="MessageDigestButton_Click"/>
+        <Button Name="SignButton" Content="Potpiši" HorizontalAlignment="Left" Margin="64,435,0,0" VerticalAlignment="Top" Click="SignButton_Click"/>
+        <Button Name="CheckSignatureButton" Content="Provjeri potpis" HorizontalAlignment="Left" Margin="147,434,0,0" VerticalAlignment="Top" Click="CheckSignatureButton_Click"/>
+        <TextBlock Name="SelectedFile" HorizontalAlignment="Left" Margin="213,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="36"/>
+
+        <AppBarButton Name="ClearFileButton"  Icon="Clear" Label="Očisti" Margin="340,23,0,0" Visibility="Collapsed"/>
+        <Button Name="SelectWorkingDirectoryButton" Content="Odabir Direktorija" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,24,0,0"
+                Click="SelectWorkingDirectoryButton_Click"/>
+    </Grid>
+</Page>
